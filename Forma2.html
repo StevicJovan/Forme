@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>Zadatak1 Forme</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body text="#000000" bgcolor="#FFFFFF">
+        <p align="center"><font size="5"><b><i>Primer formi</i></b></font></p>
+        <hr>
+       	<form name="info" method="post" action="">
+            <table width="900" border="0" cellspacing="1" cellpadding="1" align="center" bgcolor="#99D9EA">
+                <th colspan="6">Potrebni podaci su:</th>
+                <tr> 
+                    <td width="20%">Ime i prezime :</td>
+                    <td><input type="text" name="imeprezime" size="30"></td>
+                    <td colspan="4">&nbsp;</td>
+                </tr>
+                <tr> 
+                    <td>Ulica:</td>
+                    <td><input type="text" name="ulica"></td>
+                    <td>Broj:</td>
+                    <td><input type="text" name="broj" size="5" maxlength="5"></td>
+                    <td colspan="2" width="25%">&nbsp;</td>
+
+                </tr>
+                <tr> 
+                    <td>Poštanski broj:</td>
+                    <td><input type="text" name="postBroj" size="5" maxlength="5"></td>
+                    <td colspan="4">&nbsp;</td>
+                </tr>
+                <tr> 
+                    <td>Grad:</td>
+                    <td><input type="text" name="grad" value="Beograd"></td>
+                    <td>Država:</td>
+                    <td> 
+                        <select name="drzava">
+                            <option>Srbija</option>
+                            <option>Crna Gora</option>
+                            <option>Bosna i Hercegovina</option>
+                            <option>Makedonija</option>
+                            <option>Hrvatska</option>
+                            <option>Slovenija</option>
+                        </select>
+                    </td>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+
+                <tr> 
+                    <td rowspan="2">Pol:</td>
+                    <td>Muški <input type="radio" name="pol" value="muški"> </td>
+                    <td rowspan="2" colspan="4">&nbsp;</td>
+                </tr>
+                <tr> 
+                    <td>Ženski <input type="radio" name="pol" value="ženski" checked></td>
+                </tr>
+                <tr> 
+                    <td>Omiljeni sladoled:</td>
+                    <td colspan="6">
+                        <table width="100%" border="0" cellspacing="1" cellpadding="1">
+                            <tr> 
+                                <td width="10%"><label for="vanila">Vanila</label></td>
+                                <td width="10%"><input type="checkbox" name="vanila" value="vanila" id="vanila"></td>
+                                <td width="10%"><label for="cokolada">Čokolada</label></td>
+                                <td width="10%"><input type="checkbox" name="cokolada" value="cokolada" id="cokolada" checked></td>
+                                <td width="10%"><label for="jagoda">Jagoda</label></td>
+                                <td width="10%"><input type="checkbox" name="jagoda" value="jagoda" id="jagoda"></td>
+                                <td width="10%"><label for="karamela">Karamela</label></td>
+                                <td width="10%"><input type="checkbox" name="karamela" value="karamela" id="karamela"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr> 
+                    <td>Kirisnièko ime:</td>
+                    <td><input type="text" name="korisnik"></td>
+                    <td>Lozinka:</td>
+                    <td><input type="password" name="lozinka"></td>
+                    <td colspan="2">&nbsp;</td>
+
+                </tr>
+                <tr> 
+                    <td>Komentar:</td>
+                    <td colspan="3"><textarea cols="70" rows="5">Ovde ispisati komentar</textarea></td>
+                    <td><input type="hidden" name="skriveno" value="OVO JE SKRIVENO POLJE"></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                    <td colspan="6"> 
+                        <div align="center"> 
+                            <input type="submit" name="potvrdi" value="POTVRDI">
+                            <input type="reset" name="odustani" value="ODUSTANI">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+
+

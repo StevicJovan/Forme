@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> HTML formulari </title>	
+        <meta charset='utf-8'>
+        <meta name="language" content="Serbian, Srpski">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        
+        <!-- Robots META Tag definiše pretraživačima koje strane da indeksira i 
+        koje linkove da prati. Podrazumevana vrednost, bez korišćenja ovog taga 
+        je "all" ili "index, follow" što bi značilo da ovaj tag nema potrebe da 
+        koristite osim u slučaju da neke strane ne želite da budu indeksirane. 
+        Vrednosti koje podržava ovaj tag su:
+
+        "all" - znači da se indeksira strana i prate svi linkovi sa nje.
+        "index, follow" - isto kao all.
+        "noindex, follow" - znači da se ne indeksira strana ali da se prate linkovi sa nje.
+        "index, nofollow" - znači da se indeksira stranica ali da se ne prate linkovi.
+        "noindex, nofollow" - znači da se niti indeksira strana niti se prate linkovi.
+        "none" - isto kao noindex, nofollow.
+        Ukoliko želite bolju kontrolu nad tim koje će se strane indeksirati ili ne, 
+        preporučuje se da to uradi pomoću "robots.txt" fajla koji je podržavaniji 
+        nego Robots META Tag. -->
+        
+        <meta name="robots" content="">
+        
+        <!-- Revisit META Tag definiše vreme, u danima, za koje bi pretraživač 
+        trebalo ponovo da poseti vašu stranu. Preporučljivo za sajtove koji često 
+        menjaju sadržaj strane.-->
+        <meta name="revisit-after" content="10 Days"> 
+    </head>
+
+    <body>	
+
+
+        <!-- 
+                atributi koji se mogu koristiti na nivo kontrola i njihova znacenja: 
+                
+                required - 
+                        obavezno polje
+                readonly - 
+                        polje u koje se ne mogu unositi vrednosti, vec samo citati 
+                pattern -
+                        regularni izraz kojim se opisuje dozvoljeni format unosa ili dozvoljeni skup karaktera
+                placeholder - 
+                        tekst kojim se zadaje primer korisnickog unosa
+                maxlength - 
+                        maksimalna duzina korisnikovog unosa
+                autofocus - 
+                        ukoliko po ucitavanju strane neki element treba da ima fokus, moze mu se pridruziti ovaj atribut. 
+                        npr. na strani Google pretrazivaca polje za pretragu ima autofocus atribut 
+                        samo jedan element u formularu moze imati ovaj atribut
+                autocomplete -
+                        atribut koji omogucava ili sprecava predloge pregledaca o mogucim unosima u zadato polje 
+        -->
+
+
+        <!-- 
+                atribut novalidate na nivou form elementa sprecava podrazumevanu pregledacevu proveru 
+                npr. proveru koja postoji za email polja, required atribut, ...
+        -->
+        <!-- ukoliko dodajemo neki fajl onda u tagu form dodajemo enctype="multipart/form-data" -->
+        <form action="" method="post">
+
+            <fieldset>		
+                <legend> Licni podaci </legend>
+
+                <!-- ime i prezime korisnika -->
+                <label for='ime_prezime'> Ime i prezime*: </label>
+                <input type='text' id='ime_prezime' placeholder='Pera Peric' maxlength='30' name='ime_prezime' required>						
+                <br>
+                <br>
+
+                <!-- datum rodjenja korisnika: pojedinjeni pregledaci vizuelizuju data elemente malim kalendarima -->
+                <label for='datum_rodjenja'> Datum rodjenja </label> 
+                <input type='date' id='datum_rodjenja' name='datum_rodjenja' >
+
+                <br> 
+                <br> 
+
+                <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local -->
+                <label for='datumvreme'> Vreme konsultacija: </label> 
+                <input id="datumvreme" type="datetime-local">
+
+                <br> 
+                <br> 
+
+                <!-- email adresa korisnika --> 
+                <label for='email'> Email </label> 
+                <input type='email' id='email' name='email'>
+
+                <br> 
+                <br>
+
+                <!-- url adresa korisnika -->
+                <label for='veb_adresa'> Veb adresa </label> 
+                <input type='url' id='veb_adresa' name='veb_adresa' autocomplete='off'>
+
+                <br> 
+                <br>
+
+                <!-- omiljena boja korisnika: pojedinjeni pregledaci vizuelizuju color elemente malim semama boja -->
+                <label for='boja'> Omiljena boja </label> 
+                <input type='color' id='boja' name='boja'>
+
+                <br> 
+                <br> 
+
+                <!-- godine: polje omogucava unos numerickih vrednosti -->
+                <label for='godine'> Godine </label> 
+                <input type='number' id='godine' name='godine' max='116' min='18' step='1'>
+
+                <br> 
+                <br> 
+                
+                <!-- Jos jedan tip unosa vrednosti  skali od 0-100 -->
+                <label for='skala'> Postavi polje na 50% </label> 
+                <input type='range'  id='skala' name='skala'  min='0' max='100' step='1'>
+
+
+                <br> 
+                <br> 
+
+                <!-- korisnicko ime: -->
+                <label for='username'> Korisnicko ime*</label> 
+                <input type='text' id='username' name='korisnicko_ime' pattern='[a-zA-Z]+' required>
+
+                <br> 
+                <br> 
+
+                <!-- sifra korisnika:  -->
+                <label for='password'> Sifra* </label> 
+                <input type='password' id='password' name='sifra' required>
+
+                <br> 
+                <br> 
+                
+                <!-- 
+                    dobra praksa je da se korisnicima prikazuje progres element koji im kaze koliko posla su obavili, 
+                    a koliko im je posla jos preostalo 
+
+                    podrazumevana vrednost skale je od 0 do 1, ali se moze korigovati atributom max 
+                    value atribut oznacava tekucu vrednost 
+
+                    <progress max='100' value='80'> 80% </progress> 
+                -->
+                
+                <!-- Poznavanje PHP-a -->
+                <label for='password'> Progres </label>
+                <progress id="progres" value="22" max="100"></progress>                     
+
+                <!-- meter mozemo zadati i kao koeficijent npr value=0.5 -->
+                <label for='password'> Meter: </label>
+                <meter value="2" min="0" max="10"></meter>
+
+                <br> 
+                <br> 
+
+                <!-- upload fajla ako zelimo da zahvatimo vise fajlova odjednom koristimo multiple atribut-->
+                <label for="slika">Ubaci sliku:</label>
+                <input type="file" name="slika" id="slika">
+
+            </fieldset>
+
+            <fieldset>
+                <legend> Obrazovanje </legend>
+
+                <br> 
+                <br>
+
+                <label for='smer'> Fakultet: </label>
+                <!--
+                        atrbut size odredjuje koliko elemenata liste ce biti vidljivo size='4' 
+                        atribut multiple omogucava visestruki izbor korisnika - Ctrl+ klik na odgovarajuce polje 
+                -->
+                <select name='fakultet' id='smer'> 
+                    <option value=''> ------- </option>
+                    <optgroup label='IT'> 
+                        <option value='IT'> IT </option>
+                        <option value='EP'> EP </option>
+                        <option value='MM'> M.Medija </option>
+                    </optgroup>
+
+                    <optgroup label='DRUSTVENE NAUKE'> 
+                        <option value='f'> Filoloski fakultet </option>
+                        <option value='f'> Pravni fakultet </option>
+                    </optgroup>
+
+                    <optgroup label='UMETNOST'>
+                        <option value='fdu' > FDU </option>
+                        <option value='fdu' selected> FSU </option>
+                    </optgroup>
+                </select> 
+
+                <!-- 
+                        datalist element je kombinacija tekstualnog polja i select liste 
+                        korisnik moze da pregleda listu u zadavanje prvih nekoliko pocetnih slova
+                        ili da unese svoju vrednost 
+                -->
+                <label for='univerzitet'> Univerzitet </label>
+                <input type='text' list='svi_univerziteti' name='univerzitet' id="univerzitet">
+                <datalist id='svi_univerziteti'>
+                    <option value='BG'> Univerzitet u Beogradu </option>
+                    <option value='NS'> Univerzitet u Novom Sadu </option>
+                    <option value='NI'> Univerzitet u Nisu </option>
+                    <option value='KG'> Univerzitet u Kragujevcu </option>	
+                    <option value='NP'> Univerzitet u Novom Pazaru </option>
+                </datalist> 
+
+                <br> 
+                <br> 
+
+                <p>Godina studija:</p>
+
+                <input type='radio' id="g1" name='godina' value='1'>
+                <label for="g1">Prva</label>
+
+                <br>
+                <input type='radio' id="g2" name='godina' value='2' checked>
+                <label for="g2">Druga</label>
+
+                <br>
+                <input type='radio' id="g3" name='godina' value='3' >
+                <label for="g3">Treca</label>
+
+                <br>
+                <input type='radio' id="g4" name='godina' value='4'>
+                <label for="g4">Cetvrta</label>
+
+                <br>
+                <br>
+
+                Lista interesovanja: 
+                <br>
+                <input type='checkbox' name='prv' checked> PRV
+                <br> 
+                <input type='checkbox' name='oop' value='da'> OOP
+                <br>
+                <input type='checkbox' name='rgm' value='da'> RGM
+                <br> 
+                <input type='checkbox' name='bp' value='da'> BP
+
+            </fieldset>
+
+            <br>
+            <br>
+
+            <!-- napomena -->
+            <label for='napomena'> Napomena: </label>
+            <br>  
+            <textarea cols='80' rows='10' name='napomena' id='napomena' placeholder="Unesite napomenu..."></textarea>
+
+            <br> 
+            <br>
+
+            <!-- smisao dugmetu daje onclick atribut koji definise sta se dogadja kada korisnik klikne na njega -->
+            <input type='button' value='obicno dugme' onclick=''> 
+
+            <!-- submit dugme inicira slanje podataka iz formulara na adresu zadatu action atributom form elementa -->
+            <input type='submit' value='posalji podatke'> 
+
+            <!-- reset dugme inicira brisanje unetih podataka i postavljanje vrednosti polja na podrazumevane vrednosti -->
+            <input type='reset' value='obrisi podatke'> 
+        </form>
+    </body>
+</html>
+
+
